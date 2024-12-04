@@ -24,7 +24,6 @@ import SortNode from './custom-nodes/SortNode';
 import GroupDataNode from './custom-nodes/GroupDataNode';
 import MergeNode from './custom-nodes/MergeNode';
 import SliceNode from './custom-nodes/SliceNode';
-import { useErrorBoundary } from 'react-error-boundary';
 
 let id = 0;
 const getId = () => `dndnode_${id++}`;
@@ -102,7 +101,7 @@ const DnDFlow = () => {
           onNodeClick={handleNodeClick}
         >
           <MiniMap />
-          <Controls style={{ left: 10, bottom: 10 }} />
+          <Controls className="text-1" style={{ left: 10, bottom: 10 }} />
           <Background />
         </ReactFlow>
       </div>

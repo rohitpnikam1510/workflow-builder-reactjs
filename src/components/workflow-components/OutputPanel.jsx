@@ -128,23 +128,25 @@ const OutputPanel = () => {
 
 
     return (
-        <div className="p-4 bg-[#C1CBFF] rounded-md shadow-md">
-            <div className="mt-4 flex space-x-4 items-center">
-                <h2 className="text-xl font-bold text-[#220F01] mb-4">
+        <div className="surface-3 m-2 rounded-md p-4 shadow-md">
+            <div className="flex space-x-4 items-center justify-between mb-2">
+                <h2 className=" text-1 text-xl font-bold text-[#220F01]">
                     Output Panel
                 </h2>
-                <button
-                    onClick={exportToJSON}
-                    className="bg-[#E03E0B] text-white px-4 py-2 rounded-md hover:bg-[#220F01] transition"
-                >
-                    Export to JSON
-                </button>
-                <button
-                    onClick={exportToCSV}
-                    className="bg-[#E03E0B] text-white px-4 py-2 rounded-md hover:bg-[#220F01] transition"
-                >
-                    Export to CSV
-                </button>
+                <div className="export-actions space-x-4">
+                    <button
+                        onClick={exportToJSON}
+                        className="surface-1 font-medium text-1 shadow-lg text-white px-4 py-2 rounded-md hover:bg-[#220F01] transition"
+                    >
+                        Export to JSON
+                    </button>
+                    <button
+                        onClick={exportToCSV}
+                        className="surface-1 surface-1 font-medium text-1 shadow-lg text-white px-4 py-2 rounded-md hover:bg-[#220F01] transition"
+                    >
+                        Export to CSV
+                    </button>
+                </div>
             </div>
 
             {loading ? (

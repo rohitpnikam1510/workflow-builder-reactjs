@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import WorkflowPanel from './components/workflow-components/WorkflowPanel';
@@ -8,6 +8,11 @@ import { ErrorBoundary } from 'react-error-boundary';
 import FallbackUI from './components/FallbackUI';
 
 function App() {
+  useEffect(() => {
+    const doc = document.firstElementChild
+    doc.setAttribute('color-scheme', 'grape')
+  }, []);
+
   return (
     <ErrorBoundary FallbackComponent={FallbackUI}>
       <RFInstanceProvider>

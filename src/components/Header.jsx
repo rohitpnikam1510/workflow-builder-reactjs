@@ -47,15 +47,15 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[#220F01] text-[#C1CBFF] p-4 flex justify-between items-center border-b-4 border-saffron">
+    <header className="surface-1 rad-shadow m-1 rounded-md p-4 flex justify-between items-center">
       {/* Logo */}
-      <h1 className="text-xl font-bold">Work-Flow Builder</h1>
+      <h1 className="text-xl font-bold brand">Work-Flow Builder</h1>
 
       {/* Save Button with Dropdown */}
       <div className="relative">
         <button
           onClick={() => setShowDropdown(!showDropdown)}
-          className="bg-[#E03E0B] text-white px-4 py-2 rounded hover:bg-opacity-90"
+          className="surface-3 drop-shadow-lg font-medium text-1 px-4 py-2 rounded hover:bg-opacity-90"
         >
           Save Workflow
         </button>
