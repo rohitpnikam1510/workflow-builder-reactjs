@@ -87,7 +87,7 @@ const GroupDataNode = ({ id, data, isConnectable }) => {
 
             <div
                 id={id}
-                className="w-[250px] bg-skyblue rounded-lg shadow-lg border border-black"
+                className="bg-[--secondary] w-[250px] rounded-lg shadow-lg border border-black"
             >
                 <div className="p-2 border-b-2 border-black">
                     <h4 className="font-bold text-black">{data.label}</h4>
@@ -130,7 +130,7 @@ const GroupDataNode = ({ id, data, isConnectable }) => {
                     <div className="mt-4">
                         <button
                             onClick={handleRun}
-                            className="bg-[#E03E0B] text-white p-2 rounded mt-2"
+                            className="bg-[--primary] p-2 rounded mt-2"
                         >
                             Run
                         </button>

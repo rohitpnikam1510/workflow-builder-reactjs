@@ -42,7 +42,7 @@ const FileInput = ({ id, data, isConnectable }) => {
 
             <div
                 id={id}
-                className="bg-skyblue rounded-lg shadow-lg border border-black"
+                className="bg-[--secondary] rounded-lg shadow-lg border border-black"
             >
                 <div className="p-2 border-b-2 border-black">
                     <h4 className="font-bold text-black">{data.label}</h4>

@@ -3,9 +3,28 @@ export const content = ['./src/**/*.{js,jsx}'];
 export const theme = {
     extend: {
         colors: {
-            black: '#220F01',
-            saffron: '#E03E0B',
-            skyblue: '#C1CBFF',
+            header: "var(--primary)",
+            headerText: "var(--white)",
+            sidebar: "var(--lavender)",
+            sidebarText: "var(--black)",
+            canvas: "var(--accent)",
+            gridline: "var(--secondary)",
+            output: "var(--accent)",
+            outputBorder: "var(--secondary)",
+            primaryButton: "var(--primary)",
+            primaryButtonText: "var(--white)",
+            secondaryButton: "var(--secondary)",
+            secondaryButtonText: "var(--black)",
+            sidebarButton: "var(--secondary)",
+            sidebarButtonText: "var(--black)",
+            sidebarButtonBorder: "var(--secondary)",
+            sidebarButtonHoverBg: "var(--primary)",
+            sidebarButtonHoverBorder: "var(--accent)",
+            textPrimary: "var(--black)",
+            textSecondary: "var(--primary)",
+            textAccent: "var(--accent)",
+            textMuted: "var(--secondary)",
+            textHeader: "var(--black)",
         }
     },
 };

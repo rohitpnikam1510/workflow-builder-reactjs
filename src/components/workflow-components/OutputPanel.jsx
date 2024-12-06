@@ -86,14 +86,14 @@ const OutputPanel = () => {
         const headers = Object.keys(data[0]);
 
         return (
-            <div className="overflow-auto max-w-full">
-                <table className="table-auto w-full border-collapse border border-black">
+            <div className="overflow-auto max-w-full scrollbar-thin">
+                <table className="table-auto w-full border-collapse">
                     <thead>
                         <tr>
                             {headers.map((key) => (
                                 <th
                                     key={key}
-                                    className="border border-skyblue p-2 text-left bg-saffron text-white"
+                                    className="bg-[--lavender] border border-[--primary] p-2 text-left text-[--primary]"
                                 >
                                     {key}
                                 </th>
@@ -104,7 +104,7 @@ const OutputPanel = () => {
                         {data.map((row, idx) => (
                             <tr key={idx}>
                                 {headers.map((key) => (
-                                    <td key={key} className="px-4 py-2 border border-skyblue">
+                                    <td key={key} className="px-4 py-2 border border-[--primary]">
                                         {Array.isArray(row[key]) ? (
                                             <div className="p-2">
                                                 {renderTable(row[key])} {/* Nested table */}
@@ -128,24 +128,30 @@ const OutputPanel = () => {
 
 
     return (
-        <div className="p-4 bg-[#C1CBFF] rounded-md shadow-md">
-            <div className="mt-4 flex space-x-4 items-center">
-                <h2 className="text-xl font-bold text-[#220F01] mb-4">
+        <div className="bg-output p-4 rounded-md shadow-md h-40">
+            <div className="flex items-center justify-between mt-4 mb-4 border-b-2 border-[--primary]">
+                <h2 className="text-xl font-bold text-[--primary]">
                     Output Panel
                 </h2>
-                <button
-                    onClick={exportToJSON}
-                    className="bg-[#E03E0B] text-white px-4 py-2 rounded-md hover:bg-[#220F01] transition"
-                >
-                    Export to JSON
-                </button>
-                <button
-                    onClick={exportToCSV}
-                    className="bg-[#E03E0B] text-white px-4 py-2 rounded-md hover:bg-[#220F01] transition"
-                >
-                    Export to CSV
-                </button>
+                <div className="export-actions space-x-4">
+                    <button
+                        onClick={exportToJSON}
+                        className="bg-sidebarButton text-sidebarButtonText border border-sidebarButtonBorder px-4 py-2 rounded-md
+        hover:bg-sidebarButtonHoverBg hover:border-sidebarButtonHoverBorder rounded hover:bg-opacity-90"
+                    >
+                        Export to JSON
+                    </button>
+                    <button
+                        onClick={exportToCSV}
+                        className="bg-sidebarButton text-sidebarButtonText border border-sidebarButtonBorder px-4 py-2 rounded-md
+        hover:bg-sidebarButtonHoverBg hover:border-sidebarButtonHoverBorder rounded hover:bg-opacity-90"
+                    >
+                        Export to CSV
+                    </button>
+                </div>
             </div>
+
+            <hr className="bg-[--primary]" />
 
             {loading ? (
                 <p className="text-[#220F01]">Loading data...</p>
@@ -162,8 +168,8 @@ const OutputPanel = () => {
                             onClick={handlePreviousPage}
                             disabled={currentPage === 0}
                             className={`px-4 py-2 rounded-md ${currentPage === 0
-                                ? 'bg-gray-300 cursor-not-allowed'
-                                : 'bg-[#E03E0B] text-white hover:bg-[#220F01]'
+                                ? 'bg-[--secondary] cursor-not-allowed'
+                                : 'bg-[--primary] text-white hover:bg-[--secondary]'
                                 }`}
                         >
                             Previous
@@ -175,8 +181,8 @@ const OutputPanel = () => {
                             onClick={handleNextPage}
                             disabled={currentPage === totalPages - 1}
                             className={`px-4 py-2 rounded-md ${currentPage === totalPages - 1
-                                ? 'bg-gray-300 cursor-not-allowed'
-                                : 'bg-[#E03E0B] text-white hover:bg-[#220F01]'
+                                ? 'bg-[--secondary] cursor-not-allowed'
+                                : 'bg-[--primary] text-white hover:bg-[--secondary]'
                                 }`}
                         >
                             Next

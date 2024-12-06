@@ -84,9 +84,9 @@ const DnDFlow = () => {
   };
 
   return (
-    <div className="dndflow flex w-full h-[100vh]">
+    <div className="dndflow flex w-full">
       <NodesPanel />
-      <div className="reactflow-wrapper flex-1 h-full" ref={reactFlowWrapper}>
+      <div className="reactflow-wrapper flex-1 overflow-y-auto" ref={reactFlowWrapper}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -113,7 +113,7 @@ const DnDFlow = () => {
 const WorkflowPanel = () => {
 
   return (
-    <div className="w-full h-full flex">
+    <div className="w-full flex">
       <ReactFlowProvider>
         <DnDProvider>
           <DnDFlow />

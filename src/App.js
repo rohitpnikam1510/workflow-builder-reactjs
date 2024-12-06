@@ -11,13 +11,13 @@ function App() {
   return (
     <ErrorBoundary FallbackComponent={FallbackUI}>
       <RFInstanceProvider>
-        <div className="h-screen flex flex-col">
-          <Header />
-          <div className="flex-grow">
-            <WorkflowPanel />
+          <div className="flex flex-col h-screen scrollbar-thin">
+            <Header />
+            <div className="flex flex-1 overflow-hidden">
+              <WorkflowPanel />
+            </div>
+            <OutputPanel />
           </div>
-          <OutputPanel />
-        </div>
       </RFInstanceProvider>
     </ErrorBoundary>
   );
